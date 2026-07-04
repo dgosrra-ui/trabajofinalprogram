@@ -17,3 +17,20 @@ void listarEmpleados(Empleado empleados[], int cantidad)
         printf("%s\t%s\t%s\t%.2f\t%d\t%.2f\n", empleados[i].codigo, empleados[i].nombre, empleados[i].cargo, empleados[i].sueldoBase, empleados[i].horasExtra, sueldoTotal);
     }
 }
+//eliminar empleado
+int eliminarEmpleado(Empleado empleados[], int *cantidad, char codigo[])
+{
+    for(int i = 0; i < *cantidad; i++)
+    {
+        if(strcmp(empleados[i].codigo, codigo) == 0)
+        {
+            for(int j = i; j < *cantidad - 1; j++)
+            {
+                empleados[j] = empleados[j + 1];
+            }
+            (*cantidad)--;
+            return 1; // empleado eliminado
+        }
+    }
+    return 0; 
+}
