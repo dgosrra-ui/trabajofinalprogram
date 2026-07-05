@@ -47,11 +47,11 @@ void menuPrincipal(Empleado empleados[], int *cantidad) {
                 }
                 break;
             case 6:
-                guardarEnArchivo(empleados, *cantidad);
+                guardarArchivo(empleados, *cantidad);
                 break;
             case 7:
                 printf("\nGuardando automaticamente en 'empleados.csv' y saliendo...\n");
-                guardarEnArchivo(empleados, *cantidad);
+                guardarArchivo(empleados, *cantidad);
                 printf(" Sistema cerrado correctamente!\n");
                 break;
             default:
@@ -65,7 +65,7 @@ void menuPrincipal(Empleado empleados[], int *cantidad) {
 int main() {
     Empleado empleados[MAX_EMPLEADOS];
     int cantidad = 0;
-    cargarDesdeArchivo(empleados, &cantidad);
+    cantidad = cargarArchivo(empleados);
     menuPrincipal(empleados, &cantidad);
     return 0;
 }
