@@ -28,7 +28,7 @@ int esCodigoUnico(Empleado empleados[], int cantidad, const char *codigo) {
 
 
 void registrarEmpleado(Empleado empleados[], int *cantidad) {
-    if (*cantidad >= MAX_EMPLOYEES) {
+    if (*cantidad >= MAX_EMPLEADOS) {
         printf("\n Error: Límite máximo de empleados alcanzado.\n");
         return;
     }
